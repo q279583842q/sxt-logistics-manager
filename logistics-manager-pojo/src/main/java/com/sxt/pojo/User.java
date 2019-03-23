@@ -16,6 +16,7 @@ public class User {
     private String u1;
 
     private String u2;
+    
 
     public Integer getUserId() {
         return userId;
