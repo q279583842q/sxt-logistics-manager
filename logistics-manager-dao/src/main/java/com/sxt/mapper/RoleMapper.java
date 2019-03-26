@@ -2,6 +2,8 @@ package com.sxt.mapper;
 
 import com.sxt.pojo.Role;
 import com.sxt.pojo.RoleExample;
+import com.sxt.pojo.User;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,8 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+	List<Role> queryRoleByUserId(Integer userId);
+
+	
 }

@@ -9,8 +9,9 @@ public class PageController {
 
 	@RequestMapping("/")
 	public String showMain(){
-		return "main";
+		return "login";
 	}
+	
 	@RequestMapping("/{path}")
 	public String show(@PathVariable String path){
 		return path;

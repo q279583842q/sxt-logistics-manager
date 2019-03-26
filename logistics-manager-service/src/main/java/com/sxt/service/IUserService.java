@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 
 import com.github.pagehelper.PageInfo;
 import com.sxt.dto.UserDto;
+import com.sxt.pojo.Role;
 import com.sxt.pojo.User;
 
 public interface IUserService {
@@ -58,5 +59,14 @@ public interface IUserService {
 	 * @return
 	 */
 	public PageInfo<User> queryPage(UserDto userDto)throws Exception;
+	
+	public List<Role> queryRoleByUserId(Integer userId)throws Exception;
+
+	/**
+	 * 根据角色名称查询对应的所有的用户
+	 * @param roleSalesman
+	 * @return
+	 */
+	public List<User> queryUserByRoleName(String roleSalesman);
 
 }

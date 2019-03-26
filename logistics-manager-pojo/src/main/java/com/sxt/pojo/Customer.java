@@ -1,5 +1,9 @@
 package com.sxt.pojo;
 
+import java.util.List;
+
+import com.sxt.dto.CustomerDto;
+
 public class Customer {
     private Integer customerId;
 
@@ -110,4 +114,5 @@ public class Customer {
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
+
 }

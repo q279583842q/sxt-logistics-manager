@@ -29,6 +29,11 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public List<User> query(User user) {
 		UserExample example = new UserExample();
+		if(user!=null ){
+			if(!"".equals(user.getUserName())&&user.getUserName()!=null){
+				example.createCriteria().andUserNameEqualTo(user.getUserName());
+			}
+		}
 		return userMapper.selectByExample(example );
 	}
 
@@ -103,6 +108,18 @@ public class UserServiceImpl implements IUserService {
 		List<User> list = this.query(userDto.getUser());
 		PageInfo<User> pageInfo = new PageInfo<>(list);
 		return pageInfo;
+	}
+
+	@Override
+	public List<Role> queryRoleByUserId(Integer userId) throws Exception {
+		// TODO Auto-generated method stub
+		return roleMapper.queryRoleByUserId(userId);
+	}
+
+	@Override
+	public List<User> queryUserByRoleName(String roleSalesman) {
+		
+		return userMapper.queryUserByRoleName(roleSalesman);
 	}
 
 }
